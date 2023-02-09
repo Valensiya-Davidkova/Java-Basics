@@ -1,0 +1,12 @@
+package BasicSyntaxConditionalStatementsandLoops_Lab_1;
+import java.util.Scanner;
+public class StudentInformation_1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        int age = in.nextInt();
+        double grade = in.nextDouble();
+        System.out.printf("Name: %s, Age: %d, Grade: %.2f%n", name, age, grade);
+    }
+}
