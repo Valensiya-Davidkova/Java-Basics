@@ -1,0 +1,13 @@
+package BasicSyntaxConditionalStatementsandLoops_Lab_1;
+import java.util.Scanner;
+public class Divisibleby3_8 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 1; i <= 100; i += 1) {
+            if (i % 3 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
