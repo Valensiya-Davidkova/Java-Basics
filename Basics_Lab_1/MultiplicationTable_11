@@ -1,0 +1,17 @@
+package BasicSyntaxConditionalStatementsandLoops_Lab_1;
+import java.util.Scanner;
+public class MultiplicationTable_11 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int number = Integer.parseInt(scanner.nextLine());
+        int start = Integer.parseInt(scanner.nextLine());
+        if (start <= 10) {
+            for (int i = start; i <= 10; i += 1) {
+                System.out.printf("%d X %d = %d%n", number, i, number * i);
+            }
+        } else {
+            System.out.println(number + " X " + start + " = " + number * start);
+        }
+    }
+}
