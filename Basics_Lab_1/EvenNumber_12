@@ -1,0 +1,20 @@
+package BasicSyntaxConditionalStatementsandLoops_Lab_1;
+import java.util.Scanner;
+public class EvenNumber_12 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        do {
+            int number = Integer.parseInt(scanner.nextLine());
+            if (number < 0) {
+                number = number * (-1);
+            }
+            if (number % 2 == 0) {
+                System.out.printf("The number is: %d%n", number);
+                break;
+            } else {
+                System.out.println("Please write an even number.");
+            }
+        } while (true);
+    }
+}
