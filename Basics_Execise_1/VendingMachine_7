@@ -1,0 +1,66 @@
+package BasicSyntaxConditionalStatementsandLoops_Exercise_1;
+import java.util.Scanner;
+public class VendingMachine_7 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        double SUM = 0;
+        do {
+            String command = scanner.nextLine();
+            if (command.equals("Start")) {
+                break;
+            }
+            double coin = Double.parseDouble(command);
+            if (coin == 0.1 || coin == 0.2 || coin == 0.5 || coin == 1 || coin == 2) {
+                SUM = SUM + coin;
+            } else {
+                System.out.printf("Cannot accept %.2f%n", coin);
+            }
+        } while (true);
+        do {
+            String prod = scanner.nextLine();
+            if (prod.equals("End")) {
+                System.out.printf("Change: %.2f%n", SUM);
+                break;
+            }
+            if (prod.equals("Coke")) {
+                if (1.0 <= SUM) {
+                    System.out.println("Purchased Coke");
+                    SUM = SUM - 1.0;
+                } else {
+                    System.out.println("Sorry, not enough money");
+                }
+            } else if (prod.equals("Nuts")) {
+                if (2.0 <= SUM) {
+                    System.out.println("Purchased Nuts");
+                    SUM = SUM - 2.0;
+                } else {
+                    System.out.println("Sorry, not enough money");
+                }
+            } else if (prod.equals("Water")) {
+                if (0.70 <= SUM) {
+                    System.out.println("Purchased Water");
+                    SUM = SUM - 0.70;
+                } else {
+                    System.out.println("Sorry, not enough money");
+                }
+            } else if (prod.equals("Crisps")) {
+                if (1.5 <= SUM) {
+                    System.out.println("Purchased Crisps");
+                    SUM = SUM - 1.5;
+                } else {
+                    System.out.println("Sorry, not enough money");
+                }
+            } else if (prod.equals("Soda")) {
+                if (0.80 <= SUM) {
+                    System.out.println("Purchased Soda");
+                    SUM = SUM - 0.80;
+                } else {
+                    System.out.println("Sorry, not enough money");
+                }
+            } else {
+                System.out.println("Invalid product");
+            }
+        } while (true);
+    }
+}
