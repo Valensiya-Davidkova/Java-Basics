@@ -1,0 +1,17 @@
+package BasicSyntaxConditionalStatementsandLoops_Exercise_1;
+import java.util.Scanner;
+public class PrintandSum_4 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int start = in.nextInt();
+        int end = in.nextInt();
+        int SUM = 0;
+        for (int i = start; i <= end; i += 1) {
+            System.out.print(i + " ");
+            SUM = SUM + i;
+        }
+        System.out.printf("%n");
+        System.out.println("Sum: " + SUM);
+    }
+}
