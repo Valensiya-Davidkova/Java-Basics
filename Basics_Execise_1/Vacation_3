@@ -1,0 +1,58 @@
+package BasicSyntaxConditionalStatementsandLoops_Exercise_1;
+import java.util.Scanner;
+public class Vacation_3 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        double total = 0;
+        int numbers = Integer.parseInt(scanner.nextLine());
+        String group = scanner.nextLine();
+        String day = scanner.nextLine();
+        if (group.equals("Students")) {
+            if (day.equals("Friday")) {
+                total = numbers * 8.45;
+            } else if (day.equals("Saturday")) {
+                total = numbers * 9.80;
+            } else if (day.equals("Sunday")) {
+                total = numbers * 10.46;
+            }
+        } else if (group.equals("Business")) {
+            if (day.equals("Friday")) {
+                total = numbers * 10.90;
+            } else if (day.equals("Saturday")) {
+                total = numbers * 15.60;
+            } else if (day.equals("Sunday")) {
+                total = numbers * 16.00;
+            }
+        } else if (group.equals("Regular")) {
+            if (day.equals("Friday")) {
+                total = numbers * 15.00;
+            } else if (day.equals("Saturday")) {
+                total = numbers * 20.00;
+            } else if (day.equals("Sunday")) {
+                total = numbers * 22.50;
+            }
+        }
+        if (group.equals("Students")) {
+            if (numbers >= 30) {
+                double otstupka_students = total * 0.15;
+                total = total - otstupka_students;
+            }
+        }
+        if (group.equals("Business")) {
+            if (numbers >= 100) {
+                int otstupka_na_broi_hora = numbers / 10;
+                double otstupka = otstupka_na_broi_hora * (total / numbers);
+                total = total - otstupka;
+            }
+        }
+        if (group.equals("Regular")) {
+            if ((numbers >= 10) && (numbers <= 20)) {
+                double otstupka_reg = total * 0.05;
+                total = total - otstupka_reg;
+            }
+        }
+        System.out.printf("Total price: %.2f%n", total);
+        //123;Business;Sunday ===> Total price: 1776.00
+    }
+}
