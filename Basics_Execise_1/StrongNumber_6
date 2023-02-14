@@ -1,0 +1,29 @@
+package BasicSyntaxConditionalStatementsandLoops_Exercise_1;
+import java.util.Scanner;
+public class StrongNumber_6 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int SUM = 0;
+        int proizvedenie = 1;
+        int num = in.nextInt();
+        int num_o = num;
+        while (num > 0) {
+            int cifra = num % 10;
+            for (int i = 1; i <= cifra; i += 1) {
+                proizvedenie = proizvedenie * i;
+            }
+            SUM = SUM + proizvedenie;
+            num = num / 10;
+            proizvedenie = 1;
+        }
+        //System.out.println("SUM: "+SUM);
+        //System.out.println("num: "+num);
+
+        if (SUM == num_o) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+    }
+}
