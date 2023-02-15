@@ -1,0 +1,34 @@
+package BasicSyntaxConditionalStatementsandLoops_Exercise_1;
+import java.util.Scanner;
+public class PadawanEquipment_10 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        double SUM = 0;
+        double budjet = in.nextDouble();
+        int number = in.nextInt();
+        double sabre = in.nextDouble();
+        double robe = in.nextDouble();
+        double belt = in.nextDouble();
+
+        double price_for_belts = number * belt;
+        double otstupka_kolani = (number / 6) * belt;
+        price_for_belts = price_for_belts - otstupka_kolani;
+
+        int broi_parashuti = number;
+        double dop = 0.10 * number;
+        int dopulnitelno = (int) dop;
+        if ((dop - dopulnitelno) > 0) {
+            dopulnitelno = dopulnitelno + 1;
+        }
+        broi_parashuti = broi_parashuti + dopulnitelno;
+        double price_for_sabre = broi_parashuti * sabre;
+        double price_for_robe = number * robe;
+        SUM = price_for_sabre + price_for_robe + price_for_belts;
+        if (SUM <= budjet) {
+            System.out.printf("The money is enough - it would cost %.2flv.%n", SUM);
+        } else {
+            System.out.printf("George Lucas will need %.2flv more.%n", (SUM - budjet));
+        }
+    }
+}
