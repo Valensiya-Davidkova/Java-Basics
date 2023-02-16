@@ -1,0 +1,31 @@
+package BasicSyntaxConditionalStatementsandLoops_Exercise_1;
+import java.util.Scanner;
+public class RageExpenses_11 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int number = in.nextInt();
+        double headset_price = in.nextDouble();
+        double mouse_price = in.nextDouble();
+        double keyboard_price = in.nextDouble();
+        double display_price = in.nextDouble();
+        int headset = 0;
+        int mouse = 0;
+        int keyboard = 0;
+        int display = 0;
+        for (int i = 1; i <= number; i += 1) {
+            if ((i % 2 == 0) && (i % 3 == 0)) {
+                headset = headset + 1;
+                mouse = mouse + 1;
+                keyboard = keyboard + 1;
+            } else if (i % 2 == 0) {
+                headset = headset + 1;
+            } else if (i % 3 == 0) {
+                mouse = mouse + 1;
+            }
+        }
+        display = keyboard / 2;
+        double SUM = (headset * headset_price) + (mouse * mouse_price) + (keyboard * keyboard_price) + (display * display_price);
+        System.out.printf("Rage expenses: %.2f lv.%n", SUM);
+    }
+}
