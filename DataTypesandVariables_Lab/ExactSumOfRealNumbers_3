@@ -1,0 +1,16 @@
+package DataTypesandVariables_Lab_2;
+import java.math.BigDecimal;
+import java.util.Scanner;
+public class ExactSumOfRealNumbers_3 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        BigDecimal SUM = new BigDecimal("0");
+        int n = in.nextInt();
+        for (int i = 1; i <= n; i += 1) {
+            BigDecimal number = new BigDecimal(scanner.nextLine());
+            SUM = SUM.add(number);
+        }
+        System.out.println(SUM);
+    }
+}
