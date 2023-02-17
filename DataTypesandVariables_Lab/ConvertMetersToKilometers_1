@@ -1,0 +1,12 @@
+package DataTypesandVariables_Lab_2;
+import java.util.Scanner;
+public class ConvertMetersToKilometers_1 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int metre = in.nextInt();
+        double met = (double) metre;
+        double kilo = metre / 1000.0;
+        System.out.printf("%.2f%n", kilo);
+    }
+}
