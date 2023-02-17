@@ -1,0 +1,11 @@
+package DataTypesandVariables_Lab_2;
+import java.util.Scanner;
+public class PoundsToDollars_2 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        double Bpounds = in.nextDouble();
+        double dollars = Bpounds * 1.36;
+        System.out.printf("%.3f%n", dollars);
+    }
+}
