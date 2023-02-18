@@ -1,0 +1,16 @@
+package DataTypesandVariables_Lab_2;
+import java.util.Scanner;
+public class ReversedChars_7 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        String Q = "";
+        for (int i = 1; i <= 3; i += 1) {
+            char letter = scanner.next().charAt(0);
+            Q = Q + letter;
+        }
+        for (int i = (Q.length() - 1); i >= 0; i--) {
+            System.out.print(Q.charAt(i) + " ");
+        }
+    }
+}
