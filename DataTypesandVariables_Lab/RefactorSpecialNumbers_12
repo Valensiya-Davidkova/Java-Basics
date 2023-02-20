@@ -1,0 +1,27 @@
+package DataTypesandVariables_Lab_2;
+import java.util.Scanner;
+public class RefactorSpecialNumbers_12 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        int SUM = 0;
+        int number = 0;
+        boolean toe = false;
+        for (int i = 1; i <= n; i++) {
+            number = i;
+            while (number > 0) {
+                SUM = SUM + (number % 10);
+                number = number / 10;
+            }
+            //System.out.println(i+"===>"+SUM);
+            //toe = (SUM == 5) || (SUM == 7) || (SUM == 11);
+            if (SUM == 5 || SUM == 7 || SUM == 11) {
+                System.out.printf("%d -> True%n", i);
+            } else {
+                System.out.printf("%d -> False%n", i);
+            }
+            SUM = 0;
+        }
+    }
+}
