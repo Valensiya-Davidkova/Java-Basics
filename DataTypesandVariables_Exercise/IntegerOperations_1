@@ -1,0 +1,15 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class IntegerOperations_1 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int number1=in.nextInt();
+        int number2=in.nextInt();
+        int div_number=in.nextInt();
+        int mul_number=in.nextInt();
+        int division=(number1+number2)/div_number;
+        int result=division*mul_number;
+        System.out.println(result);
+    }
+}
