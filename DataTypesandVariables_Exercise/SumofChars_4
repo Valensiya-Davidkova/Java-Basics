@@ -1,0 +1,16 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class SumofChars_4 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int SUM=0;
+        int n=in.nextInt();
+        for(int i=1;i<=n;i+=1){
+            char letter=scanner.next().charAt(0);
+            //int stoinost=(int)letter;--->moje i s cast na char
+            SUM=SUM+letter;
+        }
+        System.out.printf("The sum equals: %d%n",SUM);
+    }
+}
