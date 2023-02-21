@@ -1,0 +1,16 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class SumDigits_2 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int SUM = 0;
+        int number = in.nextInt();//5
+        do {
+            int ostatuk = number % 10;//5
+            SUM = SUM + ostatuk;//SUM=12
+            number = number / 10;//0
+        } while (number > 0);
+        System.out.println(SUM);
+    }
+}
