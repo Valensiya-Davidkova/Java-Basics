@@ -1,0 +1,16 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class Elevator_3 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int people = in.nextInt();
+        int capacity = in.nextInt();
+        int course = people / capacity;
+        double real_course = people / (double) capacity;
+        if ((real_course - course) > 0) {
+            course = course + 1;
+        }
+        System.out.println(course);
+    }
+}
