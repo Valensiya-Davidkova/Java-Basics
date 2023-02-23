@@ -1,0 +1,33 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class Snowballs_11 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int counter=0;
+        int max_snow=0;
+        int max_time=0;
+        int max_quality=0;
+        double max_Value=0;
+        int n=in.nextInt();
+        do{
+            if(counter==n){
+            break;
+            }
+            int snow=Integer.parseInt(scanner.nextLine());
+            int time=Integer.parseInt(scanner.nextLine());
+            int quality=Integer.parseInt(scanner.nextLine());
+            //(snowballSnow / snowballTime) ^ snowballQuality
+            int delenie=snow/time;
+            double Value=Math.pow(delenie,quality);
+            if(max_Value<Value){
+            max_Value=Value;
+            max_snow=snow;
+            max_time=time;
+            max_quality=quality;
+            }
+            counter=counter+1;
+        }while(true);
+        System.out.printf("%d : %d = %.0f (%d)%n",max_snow,max_time,max_Value,max_quality);
+    }
+}
