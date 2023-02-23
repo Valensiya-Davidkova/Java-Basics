@@ -1,0 +1,41 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class SpiceMustFlow_9 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int SUM = 0;
+        int counter = 0;
+        int start_yield = in.nextInt();
+        do {
+            if (start_yield >= 100) {
+                SUM = SUM + (start_yield - 26);
+                start_yield = start_yield - 10;
+                counter = counter + 1;
+            } else if (start_yield < 100) {
+                System.out.println(counter);
+                int leave = SUM - 26;
+                System.out.println(leave);
+                break;
+            }
+        } while (true);
+
+        /*VARIANT S REALNI CHISLA
+        double SUM=0;
+        int counter=0;
+        double start_yield=in.nextDouble();
+        do{
+            if(start_yield>=100){
+                SUM=SUM+(start_yield-26);
+                start_yield=start_yield-10;
+                counter=counter+1;
+            }
+            else if(start_yield<100){
+                System.out.println(counter);
+                double leave=SUM-26;
+                System.out.printf("%.0f%n",leave);
+                break;
+            }
+        }while(true);*/
+    }
+}
