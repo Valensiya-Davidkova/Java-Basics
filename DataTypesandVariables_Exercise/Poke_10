@@ -1,0 +1,31 @@
+package DataTypesandVariables_Exercise_2;
+import java.util.Scanner;
+public class Poke_10 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        int N = Integer.parseInt(scanner.nextLine());
+        int M = Integer.parseInt(scanner.nextLine());
+        int Y = Integer.parseInt(scanner.nextLine());
+        double polovin_N = N / 2.0;
+        int target_counter = 0;
+        do {
+            int izv = N - M;
+            if (izv > 0) {
+                N = izv;
+                if (N == polovin_N) {
+                    if (Y != 0) {
+                        N = N / Y;
+                    } else {
+                        continue;
+                    }
+                }
+                target_counter = target_counter + 1;
+            } else {
+                System.out.println(N);
+                System.out.println(target_counter);
+                break;
+            }
+        } while (true);
+    }
+}
