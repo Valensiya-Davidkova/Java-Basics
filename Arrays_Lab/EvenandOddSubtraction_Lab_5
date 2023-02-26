@@ -1,0 +1,25 @@
+package Arrays_Lab_3;
+import java.util.Scanner;
+public class EvenandOddSubtraction_Lab_5 {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        int[] arr1=new int[arr.length];
+        for(int i=0;i<arr1.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            arr1[i]=number;
+        }
+        int SUM_even=0;
+        int SUM_odd=0;
+        for(int i=0;i<arr1.length;i+=1){
+            if(arr1[i]%2==0){
+                SUM_even=SUM_even+arr1[i];
+            }
+            else{
+                SUM_odd=SUM_odd+arr1[i];
+            }
+        }
+        System.out.println(SUM_even-SUM_odd);
+    }
+}
