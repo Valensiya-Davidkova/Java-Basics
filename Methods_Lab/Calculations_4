@@ -1,0 +1,39 @@
+package Methods_Lab_4;
+import java.util.Scanner;
+public class Calculations_4 {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String operation=scanner.nextLine();
+        int num=Integer.parseInt(scanner.nextLine());
+        int num1=Integer.parseInt(scanner.nextLine());
+        if(operation.equals("add")){
+            ADD(num,num1);
+        }
+        else if(operation.equals("multiply")){
+            MULTIPLY(num,num1);
+        }
+        else if(operation.equals("subtract")){
+            SUBTRACT(num,num1);
+        }
+        else if(operation.equals("divide")){
+            DIVIDE(num,num1);
+        }
+
+    }
+    public static void ADD(int x,int y){
+        int result=x+y;
+        System.out.println(result);
+    }
+    public static void MULTIPLY(int x,int y){
+        int result=x*y;
+        System.out.println(result);
+    }
+    public static void SUBTRACT(int x,int y){
+        int result=x-y;
+        System.out.println(result);
+    }
+    public static void DIVIDE(int x,int y){
+        int result=x/y;
+        System.out.println(result);
+    }
+}
