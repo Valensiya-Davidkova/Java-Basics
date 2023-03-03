@@ -1,0 +1,30 @@
+package Methods_Lab_4;
+import java.util.Scanner;
+public class Orders_5 {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String product=scanner.nextLine();
+        int num=Integer.parseInt(scanner.nextLine());
+        Orders(product,num);
+
+    }
+    public static void Orders(String prod,int n){
+        double result=0;
+        if(prod.equals("coffee")){
+            result=n*1.50;
+            System.out.printf("%.2f%n",result);
+        }
+        else if(prod.equals("water")){
+            result=n*1.00;
+            System.out.printf("%.2f%n",result);
+        }
+        else if(prod.equals("coke")){
+            result=n*1.40;
+            System.out.printf("%.2f%n",result);
+        }
+        else if(prod.equals("snacks")){
+            result=n*2.00;
+            System.out.printf("%.2f%n",result);
+        }
+    }
+}
