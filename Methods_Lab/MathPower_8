@@ -1,0 +1,20 @@
+package Methods_Lab_4;
+import java.util.Scanner;
+public class MathPower_8 {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        double num=Double.parseDouble(scanner.nextLine());
+        int n=Integer.parseInt(scanner.nextLine());
+        double result_m=PowerNumbers(num,n);
+        int result_m1=(int)result_m;
+        if((result_m-result_m1)>0){
+            System.out.printf("%.4f%n",result_m);
+        }
+        else{
+            System.out.println(result_m1);}
+    }
+    public static double PowerNumbers(double number,int pow){
+        double result=Math.pow(number,pow);
+        return result;
+    }
+}
