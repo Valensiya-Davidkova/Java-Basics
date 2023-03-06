@@ -1,0 +1,30 @@
+package Methods_Lab_4;
+import java.util.Scanner;
+public class MultiplyEvensByOdds_10 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int num=Integer.parseInt(scanner.nextLine());
+        if(num<0){
+            num=num*(-1);
+        }
+        System.out.println(Multiply(num));
+
+    }
+    public static int Multiply(int number){
+        int SumEvenD=0;
+        int SumOddD=0;
+        do{
+            int last=number%10;
+            if(last%2==0){
+                SumEvenD=SumEvenD+last;
+            }
+            else{
+                SumOddD=SumOddD+last;
+            }
+            number=number/10;
+        }while(number>0);
+        int result=SumEvenD*SumOddD;
+        return result;
+    }
+}
