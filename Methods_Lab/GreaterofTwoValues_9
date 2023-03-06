@@ -1,0 +1,54 @@
+package Methods_Lab_4;
+import java.util.Scanner;
+public class GreaterofTwoValues_9 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String type=scanner.nextLine();
+        if(type.equals("int")){
+            int num1=Integer.parseInt(scanner.nextLine());
+            int num2=Integer.parseInt(scanner.nextLine());
+            System.out.println(getMax(num1,num2));
+        }
+        else if(type.equals("char")){
+            char one1=scanner.nextLine().charAt(0);
+            char second1=scanner.nextLine().charAt(0);
+            System.out.println(getMax(one1,second1));
+        }
+        else if(type.equals("string")){
+            String word=scanner.nextLine();
+            String word1=scanner.nextLine();
+            System.out.println(getMax(word,word1));
+        }
+    }
+    public static int getMax(int x,int y){
+        int maxInteger=0;
+        if(x>y){
+            maxInteger=x;
+        }
+        else{
+            maxInteger=y;
+        }
+        return maxInteger;
+    }
+    public static char getMax(char one,char second){
+        char temp=' ';
+        if(one>second){
+            temp=one;
+        }
+        else{
+            temp=second;
+        }
+        return temp;
+    }
+    public static String getMax(String first,String newone){
+        String maxString="";
+        if(first.charAt(0)>=newone.charAt(0)){
+            maxString=first;
+        }
+        else{
+            maxString=newone;
+        }
+        return maxString;
+    }
+}
