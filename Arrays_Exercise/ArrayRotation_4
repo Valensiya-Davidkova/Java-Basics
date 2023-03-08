@@ -1,0 +1,50 @@
+package Arrays_Exercise_3;
+import java.util.Scanner;
+public class ArrayRotation_4 {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        int k=0;
+        int flag=0;
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        int[] arr1=new int[arr.length];
+        int[] arr1_dublicate=new int[arr.length];
+        for(int i=0;i<arr1.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            arr1[i]=number;
+        }
+        int n=Integer.parseInt(scanner.nextLine());
+        if(n<arr1.length){
+            for(int i=n;i<arr1.length;i+=1){
+                arr1_dublicate[k]=arr1[i];
+                k=k+1;
+            }
+            for(int j=0;j<n;j+=1){
+                arr1_dublicate[k]=arr1[j];
+                k=k+1;
+            }
+        }
+        else if(n>arr1.length){
+            int a=n-arr1.length;
+            for(int m=a;m<arr1.length;m+=1){
+                arr1_dublicate[k]=arr1[m];
+                k=k+1;
+            }
+            for(int h=0;h<a;h+=1){
+                arr1_dublicate[k]=arr1[h];
+                k=k+1;
+            }
+        }
+        else{
+            flag=1;
+            for(int i=0;i<arr1.length;i+=1){
+                System.out.print(arr1[i]+" ");
+            }
+        }
+        if(flag==0){
+            for(int i=0;i<arr1_dublicate.length;i+=1){
+                System.out.print(arr1_dublicate[i]+" ");
+            }
+        }
+    }
+}
