@@ -1,0 +1,47 @@
+package Arrays_Exercise_3;
+import java.util.Scanner;
+public class TopIntegers_5 {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        int[] arr1=new int[arr.length];
+        for(int i=0;i<arr1.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            arr1[i]=number;
+        }
+        int check=0;
+        int counter=0;
+        for(int i=0;i<arr1.length;i+=1){
+            for(int j=i+1;j<arr1.length;j+=1){
+                if(arr1[i]>arr1[j]){
+                    check=check+1;
+                }
+            }
+            int index=i;
+            if(check==((arr1.length-1)-index)){
+                counter=counter+1;
+            }
+            check=0;
+        }
+        int[] ARR=new int[counter];
+        int k=0;
+        int check1=0;
+        for(int i=0;i<arr1.length;i+=1){
+            for(int j=i+1;j<arr1.length;j+=1){
+                if(arr1[i]>arr1[j]){
+                    check1=check1+1;
+                }
+            }
+            int index1=i;
+            if(check1==((arr.length-1)-index1)){
+                ARR[k]=arr1[i];
+                k=k+1;
+            }
+            check1=0;
+        }
+        for(int i=0;i<ARR.length;i+=1){
+            System.out.print(ARR[i]+" ");
+        }
+    }
+}
