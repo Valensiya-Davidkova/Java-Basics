@@ -1,0 +1,23 @@
+package Mathods_Exercise_4;
+import java.util.Scanner;
+public class SmallestofThreeNumbers_1 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int[] arr=new int[3];
+        for(int i=0;i<arr.length;i+=1){
+            int number=Integer.parseInt(scanner.nextLine());
+            arr[i]=number;
+        }
+        System.out.println(MinElement(arr));
+    }
+    public static int MinElement(int[] arr1){
+        int min=arr1[0];
+        for(int i=0;i<arr1.length;i+=1){
+            if(min>arr1[i]){
+                min=arr1[i];
+            }
+        }
+        return min;
+    }
+}
