@@ -1,0 +1,32 @@
+package Mathods_Exercise_4;
+import java.util.Scanner;
+public class CharactersInRange_3 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        char first=scanner.nextLine().charAt(0);
+        char second=scanner.nextLine().charAt(0);
+        Exercise(first,second);
+
+    }
+    public static void Exercise(char first1,char second1) {
+        int start=0;
+        int end=0;
+        if ((int) first1 > (int) second1) {
+            start = (int) second1 + 1;
+            end = (int) first1 - 1;
+            for (int i = start; i <= end; i += 1) {
+                char symbol = (char) i;
+                System.out.print(symbol + " ");
+            }
+        }
+        else if((int)first1<(int)second1){
+            start=(int)first1+1;
+            end=(int)second1-1;
+            for (int i = start; i <= end; i += 1) {
+                char symbol = (char) i;
+                System.out.print(symbol + " ");
+            }
+        }
+    }
+}
