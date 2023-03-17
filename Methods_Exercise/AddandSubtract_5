@@ -1,0 +1,21 @@
+package Mathods_Exercise_4;
+import java.util.Scanner;
+public class AddandSubtract_5 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int number1=Integer.parseInt(scanner.nextLine());
+        int number2=Integer.parseInt(scanner.nextLine());
+        int number3=Integer.parseInt(scanner.nextLine());
+        System.out.println(SUBTRACT(number1,number2,number3));
+
+    }
+    public static int SUM(int x,int y){
+        int result=x+y;
+        return result;
+    }
+    public static int SUBTRACT(int x,int y,int z){
+        int newone=SUM(x,y)-z;
+        return newone;
+    }
+}
