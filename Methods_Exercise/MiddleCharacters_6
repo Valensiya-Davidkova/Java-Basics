@@ -1,0 +1,25 @@
+package Mathods_Exercise_4;
+import java.util.Scanner;
+public class MiddleCharacters_6 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String word=scanner.nextLine();
+        MiddleCharacter(word);
+
+    }
+    public static void MiddleCharacter(String word1){
+        int length=word1.length();
+        int index=0;
+        if(length%2==0){
+            index=length/2;
+            int index1=index-1;
+            System.out.print(word1.charAt(index1)+""+word1.charAt(index));
+            System.out.printf("%n");
+        }
+        else{
+            index=length/2;
+            System.out.println(word1.charAt(index));
+        }
+    }
+}
