@@ -1,0 +1,38 @@
+package Mathods_Exercise_4;
+import java.util.Scanner;
+public class TopNumber_10 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        int number=Integer.parseInt(scanner.nextLine());
+        TopNumbers(number);
+
+    }
+    public static void TopNumbers(int n){
+        int SUM=0;
+        int firstRule=0;
+        int secondRule=0;
+        for(int i=1;i<=n;i+=1){
+            int number=i;
+            do{
+                int ostatuk=number%10;
+                if(ostatuk%2!=0){
+                    secondRule=1;
+                }
+                SUM=SUM+ostatuk;
+                number=number/10;
+            }while(number>0);
+            int divisible=SUM/8;
+            double real_divisible=(double)SUM/8;
+            if((real_divisible-divisible)==0){
+                firstRule=1;
+            }
+            SUM=0;
+            if((firstRule==1) &&(secondRule==1)){
+                System.out.println(i);
+            }
+            firstRule=0;
+            secondRule=0;
+        }
+    }
+}
