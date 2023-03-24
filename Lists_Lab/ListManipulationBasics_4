@@ -1,0 +1,48 @@
+package Lists_Lab_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ListManipulationBasics_4 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        ArrayList<Integer> ARR=new ArrayList<>();
+        for(int i=0;i<arr.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            ARR.add(number);
+        }
+        do{
+            String command=scanner.nextLine();
+            if(command.equals("end")){
+                break;
+            }
+            String[] com=command.split(" ");
+            if(com[0].equals("Add")){
+                int add_number=Integer.parseInt(com[1]);
+                ARR.add(add_number);
+            }
+            else if(com[0].equals("Remove")){
+                int remove_number=Integer.parseInt(com[1]);
+                for(int i=0;i<ARR.size();i+=1){
+                    if(ARR.get(i)==remove_number){
+                        int index_to_remove=i;
+                        ARR.remove(index_to_remove);
+                    }
+                }
+            }
+            else if(com[0].equals("RemoveAt")){
+                int index=Integer.parseInt(com[1]);
+                ARR.remove(index);
+            }
+            else if(com[0].equals("Insert")){
+                int number_to_Insert=Integer.parseInt(com[1]);
+                int index_to_Insert=Integer.parseInt(com[2]);
+                ARR.add(index_to_Insert,number_to_Insert);
+            }
+        }while(true);
+        for(int i=0;i<ARR.size();i+=1){
+            System.out.print(ARR.get(i)+" ");
+        }
+    }
+}
