@@ -1,0 +1,27 @@
+package Lists_Lab_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class GaussTrick_2 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        ArrayList<Integer> ARR=new ArrayList<>();
+        for(int i=0;i<arr.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            ARR.add(number);
+        }
+        int size=ARR.size()-1;
+        int half_length=ARR.size()/2;
+        for(int i=0;i<half_length;i+=1){
+            int result=ARR.get(i)+ARR.get(size-i);
+            ARR.set(i,result);
+            int index_to_remove=size-i;
+            ARR.remove(index_to_remove);
+        }
+        for(int i=0;i<ARR.size();i+=1){
+            System.out.print(ARR.get(i)+" ");
+        }
+    }
+}
