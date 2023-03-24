@@ -1,0 +1,42 @@
+package Lists_Lab_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class MergingLists_3 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+
+        String numbers=scanner.nextLine();
+        String[] arr1=numbers.split(" ");
+        ArrayList<Integer> ARR1=new ArrayList<>();//ARR1 -> purvo vuveden masiv
+        for(int i=0;i<arr1.length;i+=1){
+            int number=Integer.parseInt(arr1[i]);
+            ARR1.add(number);
+        }
+        String num=scanner.nextLine();
+        String[] arr=num.split(" ");
+        ArrayList<Integer> ARR=new ArrayList<>();//ARR -> vtori vuveden masiv
+        for(int i=0;i<arr.length;i+=1){
+            int number1=Integer.parseInt(arr[i]);
+            ARR.add(number1);
+        }
+        //System.out.println(ARR1.size());//9
+        //System.out.println(ARR.size());//6
+        if(ARR1.size()>=ARR.size()){
+            for(int i=0;i<ARR.size();i+=1){
+                ARR1.add((2*i+1),ARR.get(i));
+            }
+            for(int i=0;i<ARR1.size();i+=1){
+                System.out.print(ARR1.get(i)+" ");
+            }
+        }
+        else if(ARR.size()>ARR1.size()){
+            for(int i=0;i<ARR1.size();i+=1){
+                ARR.add((2*i),ARR1.get(i));
+            }
+            for(int i=0;i<ARR.size();i+=1){
+                System.out.print(ARR.get(i)+" ");
+            }
+        }
+    }
+}
