@@ -1,0 +1,92 @@
+package Lists_Lab_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ListManipulationAdvanced_5 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        ArrayList<Integer> ARR=new ArrayList<>();
+        for(int i=0;i<arr.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            ARR.add(number);
+        }
+        do{
+            String command=scanner.nextLine();
+            if(command.equals("end")){
+                break;
+            }
+            String[] com=command.split(" ");
+            if(com[0].equals("Contains")){
+                int contain_number=Integer.parseInt(com[1]);
+                if(ARR.contains(contain_number)){
+                    System.out.println("Yes");
+                }
+                else{
+                    System.out.println("No such number");
+                }
+            }
+            else if(com[1].equals("even")){
+                for(int i=0;i<ARR.size();i+=1){
+                    int number=ARR.get(i);
+                    if(number%2==0){
+                        System.out.print(number+" ");
+                    }
+                }
+                System.out.printf("%n");
+            }
+            else if(com[1].equals("odd")){
+                for(int i=0;i<ARR.size();i+=1){
+                    int number1=ARR.get(i);
+                    if(number1%2!=0){
+                        System.out.print(number1+" ");
+                    }
+                }
+                System.out.printf("%n");
+            }
+            else if(com[0].equals("Get")){
+                int SUM=0;
+                for(int i=0;i<ARR.size();i+=1){
+                    int num=ARR.get(i);
+                    SUM=SUM+num;
+                }
+                System.out.println(SUM);
+                SUM=0;
+            }
+            else if(com[0].equals("Filter")){
+                String condition=com[1];
+                int num1=Integer.parseInt(com[2]);
+                if(condition.equals(">")){
+                    for(int i=0;i<ARR.size();i+=1){
+                        if(ARR.get(i)>num1){
+                            System.out.print(ARR.get(i)+" ");
+                        }
+                    }
+                }
+                else if(condition.equals("<")){
+                    for(int i=0;i<ARR.size();i+=1){
+                        if(ARR.get(i)<num1){
+                            System.out.print(ARR.get(i)+" ");
+                        }
+                    }
+                }
+                else if(condition.equals(">=")){
+                    for(int i=0;i<ARR.size();i+=1){
+                        if(ARR.get(i)>=num1){
+                            System.out.print(ARR.get(i)+" ");
+                        }
+                    }
+                }
+                else if(condition.equals("<=")){
+                    for(int i=0;i<ARR.size();i+=1){
+                        if(ARR.get(i)<=num1){
+                            System.out.print(ARR.get(i)+" ");
+                        }
+                    }
+                }
+                System.out.printf("%n");
+            }
+        }while(true);
+    }
+}
