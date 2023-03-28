@@ -1,0 +1,41 @@
+package Lists_Exercise_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Train_01 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        ArrayList<Integer> ARR=new ArrayList<>();
+        for(int i=0;i<arr.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            ARR.add(number);
+        }
+        int max=Integer.parseInt(scanner.nextLine());
+        do{
+            String command=scanner.nextLine();
+            String[] com=command.split(" ");
+            if(command.equals("end")){
+                break;
+            }
+            if(com[0].equals("Add")){
+                int wagon=Integer.parseInt(com[1]);
+                ARR.add(wagon);
+            }
+            else{
+                int number=Integer.parseInt(com[0]);
+                for(int i=0;i<ARR.size();i+=1){
+                    int ostanalo_prostranstvo=max-ARR.get(i);
+                    if(number<=ostanalo_prostranstvo){
+                        ARR.set(i,ARR.get(i)+number);
+                        break;
+                    }
+                }
+            }
+        }while(true);
+        for(int i=0;i<ARR.size();i+=1){
+            System.out.print(ARR.get(i)+" ");
+        }
+    }
+}
