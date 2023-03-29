@@ -1,0 +1,115 @@
+package Excellent;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        /*ArrayList<String> ARR=new ArrayList<>();
+        String phones=scanner.nextLine();
+        String[] arr=phones.split(", ");
+        for(int i=0;i<arr.length;i+=1){
+            ARR.add(arr[i]);
+        }
+        do{
+            String command=scanner.nextLine();
+            if(command.equals("End")){
+                break;
+            }
+            String[] com=command.split(" - ");
+            if(com[0].equals("Add")){
+                if(!ARR.contains(com[1])){
+                    ARR.add(com[1]);
+                }
+            }
+            else if(com[0].equals("Remove")){
+                if(ARR.contains(com[1])){
+                    ARR.remove(com[1]);
+                }
+            }
+            else if(com[0].equals("Bonus phone")){
+                String rev=com[1];
+                String[] newP=rev.split(":");
+                for(int i=0;i<ARR.size();i+=1){
+                    if(ARR.get(i).equals(newP[0])){
+                        ARR.add((i+1),newP[1]);
+                        break;
+                    }
+                }
+            }
+            else if(com[0].equals("Last")){
+                String lPhone=com[1];
+                for(int i=0;i<ARR.size();i+=1){
+                    if(ARR.get(i).equals(lPhone)){
+                        ARR.remove(i);
+                        ARR.add(lPhone);
+                        break;
+                    }
+                }
+            }
+        }while(true);
+        for(int i=0;i<ARR.size();i+=1){
+            if(i<ARR.size()-1){
+                System.out.printf("%s, ",ARR.get(i));
+            }
+            else{
+                System.out.printf("%s",ARR.get(i));
+            }
+        }*/
+        ArrayList<String> ARR=new ArrayList<>();
+        int counter_B=0;
+        int counter_L=0;
+        String people=scanner.nextLine();
+        String[] arr=people.split(", ");
+        for(int i=0;i<arr.length;i+=1){
+            ARR.add(arr[i]);
+        }
+        do{
+            String command=scanner.nextLine();
+            if(command.equals("Report")){
+                break;
+            }
+            String[] com=command.split(" ");
+            if(com[0].equals("Blacklist")){
+                int flag=0;
+                for(int i=0;i<ARR.size();i+=1){
+                    if(ARR.get(i).equals(com[1])){
+                        counter_B=counter_B+1;
+                        ARR.set(i,"Blacklisted");
+                        System.out.printf("%s was blacklisted.%n",com[1]);
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0){
+                    System.out.printf("%s was not found.%n",com[1]);
+                }
+            }
+            else if(com[0].equals("Error")){
+                int index=Integer.parseInt(com[1]);
+                if((index>=0) && (index<ARR.size())){
+                    if(!ARR.get(index).equals("Blacklisted")  && !ARR.get(index).equals("Lost") ){
+                        String name=ARR.get(index);
+                        counter_L++;
+                        ARR.set(index,"Lost");
+                        System.out.printf("%s was lost due to an error.%n",name);
+
+                    }
+                }
+            }
+            else if(com[0].equals("Change")){
+                int indexChange=Integer.parseInt(com[1]);
+                if((indexChange>=0) && (indexChange<ARR.size())){
+                    String oldName=ARR.get(indexChange);
+                    ARR.set(indexChange,com[2]);
+                    System.out.printf("%s changed his username to %s.%n",oldName,com[2]);
+                }
+            }
+        }while(true);
+        System.out.printf("Blacklisted names: %d%n",counter_B);
+        System.out.printf("Lost names: %d%n",counter_L);
+        for(int i=0;i<ARR.size();i+=1){
+            System.out.printf("%s ",ARR.get(i));
+        }
+    }
+}
