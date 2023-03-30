@@ -1,0 +1,41 @@
+package Lists_Exercise_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class ChangeList_02 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        String numbers=scanner.nextLine();
+        String[] arr=numbers.split(" ");
+        ArrayList<Integer> ARR=new ArrayList<>();
+        for(int i=0;i<arr.length;i+=1){
+            int number=Integer.parseInt(arr[i]);
+            ARR.add(number);
+        }
+        do{
+            String command=scanner.nextLine();
+            if(command.equals("end")){
+                break;
+            }
+            String[] com=command.split(" ");
+            if(com[0].equals("Delete")){
+                int delete_element=Integer.parseInt(com[1]);
+                for(int i=0;i<ARR.size();i+=1){
+                    if(ARR.get(i)==delete_element){
+                        int index=i;
+                        ARR.remove(index);
+                        i=-1;
+                    }
+                }
+            }
+            else if(com[0].equals("Insert")){
+                int insert_element=Integer.parseInt(com[1]);
+                int insert_position=Integer.parseInt(com[2]);
+                ARR.add(insert_position,insert_element);
+            }
+        }while(true);
+        for(int i=0;i<ARR.size();i+=1){
+            System.out.print(ARR.get(i)+" ");
+        }
+    }
+}
