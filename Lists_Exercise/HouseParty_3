@@ -1,0 +1,49 @@
+package Lists_Exercise_5;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class HouseParty_3 {
+    public static void main(String[] args){
+        Scanner in=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
+        ArrayList<String> ARR=new ArrayList<>();
+        int n=Integer.parseInt(scanner.nextLine());
+        for(int i=0;i<n;i+=1){
+            String command=scanner.nextLine();
+            String[] com=command.split(" ");
+            if(com[2].equals("not")){
+                String name=com[0];
+                int flag=0;
+                for(int j=0;j<ARR.size();j+=1){
+                    if(ARR.get(j).equals(name)){
+                        int index=j;
+                        ARR.remove(index);
+                        flag=1;
+                        break;
+                    }
+                }
+                if(flag==0){
+                    System.out.printf("%s is not in the list!%n",name);
+                }
+                flag=0;
+            }
+            else{
+                String name1=com[0];
+                int flag1=0;
+                for(int k=0;k<ARR.size();k+=1){
+                    if(ARR.get(k).equals(name1)){
+                        System.out.printf("%s is already in the list!%n",name1);
+                        flag1=1;
+                        break;
+                    }
+                }
+                if(flag1==0){
+                    ARR.add(name1);
+                }
+                flag1=0;
+            }
+        }
+        for(int i=0;i<ARR.size();i+=1){
+            System.out.println(ARR.get(i));
+        }
+    }
+}
